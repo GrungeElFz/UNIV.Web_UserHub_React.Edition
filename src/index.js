@@ -6,6 +6,7 @@ import { getUsers } from './api';
 
 const App = () => {
   const [userList, setUserList] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     getUsers()
@@ -19,7 +20,10 @@ const App = () => {
 
   return (
     <div id="App">
-      <Header userList={ userList } />
+      <Header
+        userList={ userList }
+        currentUser={ currentUser }
+        setCurrentUser={ setCurrentUser }/>
     </div>
   );
 }
